@@ -34,7 +34,6 @@ function setup() {
   generationSpan.html(generation);
 
   birdsAliveSpan = select("#birds-alive");
-  birdsAliveSpan.html(aliveBirds.lenth || 0);
 
   canvas.parent("sketch");
   for (let i = 0; i < totalPopulation; i++) {
@@ -42,6 +41,7 @@ function setup() {
     aliveBirds[i] = bird;
     allBirds[i] = bird;
   }
+  birdsAliveSpan.html(aliveBirds.lenth || 0);
 }
 
 function draw() {
