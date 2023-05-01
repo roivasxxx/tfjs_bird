@@ -7,7 +7,7 @@ function createNextGeneration() {
   resetGame();
   normalizeFitness(allBirds);
   aliveBirds = generate(allBirds);
-  birdsAliveSpan.html(aliveBirds);
+  birdsAliveSpan.html(aliveBirds.length);
   allBirds = aliveBirds.slice();
 }
 

@@ -32,7 +32,7 @@ function setup() {
   generationSpan = select("#generation");
   generationSpan.html(generation);
   birdsAliveSpan = select("#birds-alive");
-  birdsAliveSpan.html(aliveBirds);
+  birdsAliveSpan.html(aliveBirds.length);
   canvas.parent("sketch");
   for (let i = 0; i < totalPopulation; i++) {
     let bird = new Bird();
@@ -62,7 +62,7 @@ function draw() {
     }
     if (bird.bottomTopCollision()) {
       aliveBirds.splice(i, 1);
-      birdsAliveSpan.html(aliveBirds);
+      birdsAliveSpan.html(aliveBirds.lenth);
     }
   }
 
