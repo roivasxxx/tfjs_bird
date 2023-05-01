@@ -41,7 +41,7 @@ function setup() {
     aliveBirds[i] = bird;
     allBirds[i] = bird;
   }
-  birdsAliveSpan.html(aliveBirds.length);
+  birdsAliveSpan.html(totalPopulation);
 }
 
 function draw() {
@@ -85,6 +85,7 @@ function draw() {
     generationSpan.html(generation);
     createNextGeneration();
   }
-  birdsAliveSpan.html(aliveBirds.length);
+  const birdsAlive = aliveBirds.length;
+  birdsAliveSpan.html(birdsAlive);
   image(groundImg, 0, height - groundImg.height);
 }
