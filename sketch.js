@@ -41,7 +41,7 @@ function setup() {
     aliveBirds[i] = bird;
     allBirds[i] = bird;
   }
-  birdsAliveSpan.html(aliveBirds.lenth || 0);
+  birdsAliveSpan.html(aliveBirds.length);
 }
 
 function draw() {
@@ -85,6 +85,6 @@ function draw() {
     generationSpan.html(generation);
     createNextGeneration();
   }
-  birdsAliveSpan.html(aliveBirds.lenth || 0);
+  birdsAliveSpan.html(aliveBirds.length);
   image(groundImg, 0, height - groundImg.height);
 }
