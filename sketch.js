@@ -67,7 +67,6 @@ function draw() {
       aliveBirds.splice(i, 1);
     }
   }
-  birdsAliveSpan.html(aliveBirds.lenth || 0);
 
   if (frameCounter % 50 === 0) {
     pipes.push(new Pipe());
@@ -86,6 +85,6 @@ function draw() {
     generationSpan.html(generation);
     createNextGeneration();
   }
-
+  birdsAliveSpan.html(aliveBirds.lenth || 0);
   image(groundImg, 0, height - groundImg.height);
 }
