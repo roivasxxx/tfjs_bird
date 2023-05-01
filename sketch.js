@@ -29,10 +29,13 @@ function preload() {
 
 function setup() {
   let canvas = createCanvas(bg.width, bg.height);
+
   generationSpan = select("#generation");
   generationSpan.html(generation);
+
   birdsAliveSpan = select("#birds-alive");
-  birdsAliveSpan.html(aliveBirds.length);
+  birdsAliveSpan.html(aliveBirds.lenth || 0);
+
   canvas.parent("sketch");
   for (let i = 0; i < totalPopulation; i++) {
     let bird = new Bird();
@@ -57,12 +60,13 @@ function draw() {
     for (let j = 0; j < pipes.length; j++) {
       if (pipes[j].checkCollision(bird)) {
         aliveBirds.splice(i, 1);
+        birdsAliveSpan.html(aliveBirds.lenth || 0);
         break;
       }
     }
     if (bird.bottomTopCollision()) {
       aliveBirds.splice(i, 1);
-      birdsAliveSpan.html(aliveBirds.lenth);
+      birdsAliveSpan.html(aliveBirds.lenth || 0);
     }
   }
 
