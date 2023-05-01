@@ -60,15 +60,14 @@ function draw() {
     for (let j = 0; j < pipes.length; j++) {
       if (pipes[j].checkCollision(bird)) {
         aliveBirds.splice(i, 1);
-        birdsAliveSpan.html(aliveBirds.lenth || 0);
         break;
       }
     }
     if (bird.bottomTopCollision()) {
       aliveBirds.splice(i, 1);
-      birdsAliveSpan.html(aliveBirds.lenth || 0);
     }
   }
+  birdsAliveSpan.html(aliveBirds.lenth || 0);
 
   if (frameCounter % 50 === 0) {
     pipes.push(new Pipe());
